@@ -5,6 +5,7 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useAuth, UserButton } from '@clerk/clerk-react';
 import axios from 'axios';
+axios.defaults.baseURL = "https://deploycaromio-production.up.railway.app/"
 
 import LoginForm from './components/Login/Login'
 import Slide from './components/Slide/Slide';
@@ -32,7 +33,7 @@ const App = () => {
   const showCart = useSelector((state) => state.modalCart);
 
   useEffect(() => {
-    axios.get(`http://localhost:3004/users/${userId}`)
+    axios.get(`/${userId}`)
       .then((data) => {
         data && setUserData(data.data)
       })

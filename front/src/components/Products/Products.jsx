@@ -3,6 +3,7 @@ import './Products.css'
 import ProductCard from '../ProductCard/ProductCard';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
+axios.defaults.baseURL = "https://deploycaromio-production.up.railway.app/"
 import ReviewsStore from '../ReviewsStore/ReviewsStore';
 import {
   setProductsList
